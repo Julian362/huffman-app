@@ -1,0 +1,38 @@
+<div class="container text-center mt-5">
+  <h2>Ir a</h2>
+  <button routerLink="/comprimir" class="btn btn-primary m-2">Comprimir</button>
+</div>
+
+<div class="container mt-5">
+  <h2>Descompresión de Huffman</h2>
+
+  <div class="input-container mt-3">
+    <label for="compressedFileInput"
+      >Seleccione un archivo comprimido para descomprimir:</label
+    >
+    <div class="input-group">
+      <input
+        type="file"
+        id="compressedFileInput"
+        (change)="handleCompressedFileInput($event)"
+        accept=".bin"
+        class="form-control"
+      />
+      <button (click)="decompressText()" class="btn btn-success">
+        Descomprimir
+      </button>
+    </div>
+  </div>
+
+  <div class="result-container mt-4">
+    <div>
+      <h3>Texto Descomprimido:</h3>
+      <textarea
+        autosize
+        [(ngModel)]="textoDescomprimido"
+        readonly
+        class="form-control"
+      ></textarea>
+    </div>
+  </div>
+</div>

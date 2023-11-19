@@ -22,13 +22,8 @@ export class HuffmanService {
   }
 
   decompress(compressedText: string): Observable<string> {
-    console.log(compressedText);
-    const option = this.http.post<string>(`${this.apiUrl}/decompress`, {
+    return this.http.post<string>(`${this.apiUrl}/decompress`, {
       compressedText,
     });
-    option.subscribe((result) => {
-      console.log(result);
-    });
-    return option;
   }
 }

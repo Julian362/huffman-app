@@ -1,0 +1,66 @@
+<div class="container text-center mt-5">
+  <h2>Ir a</h2>
+  <button routerLink="/descomprimir" class="btn btn-success m-2">
+    Descomprimir
+  </button>
+</div>
+
+<div class="container mt-3">
+  <h2>Compresión de Huffman</h2>
+
+  <div class="input-container mt-3">
+    <label for="originalFileInput"
+      >Seleccione un archivo de texto para comprimir:</label
+    >
+    <div class="input-group mb-3">
+      <input
+        type="file"
+        id="originalFileInput"
+        class="form-control"
+        (change)="handleFileInput($event)"
+        accept=".txt"
+      />
+      <button (click)="compressText()" class="btn btn-primary">
+        Comprimir
+      </button>
+    </div>
+  </div>
+
+  <div class="result-container mt-4">
+    <div>
+      <h3>Texto Comprimido:</h3>
+      <textarea
+        autosize
+        [(ngModel)]="textoComprimido"
+        readonly
+        class="form-control"
+      ></textarea>
+    </div>
+
+    <div *ngIf="dictionary && dictionary.length > 0">
+      <h3>Diccionario:</h3>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Carácter</th>
+              <th>Código</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let entry of dictionary">
+              <td>{{ entry[1] }}</td>
+              <td>{{ entry[0] }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div *ngIf="originalSize > 0 || comprimido > 0" class="mt-4">
+      <h3>Información de Tamaño:</h3>
+      <p>Tamaño Original: {{ originalSize }} bytes</p>
+      <p>Tamaño Comprimido: {{ comprimido }} bytes</p>
+    </div>
+  </div>
+</div>
