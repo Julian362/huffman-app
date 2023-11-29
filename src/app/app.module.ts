@@ -8,12 +8,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HuffmanCompressComponent } from './huffman-compress/huffman-compress.component';
 import { HuffmanDecompressComponent } from './huffman-decompress/huffman-decompress.component';
+import { HuffmanDictionaryComponent } from './huffman-dictionary/huffman-dictionary.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HuffmanDecompressComponent,
     HuffmanCompressComponent,
+    HuffmanDictionaryComponent,
   ],
   imports: [
     BrowserModule,

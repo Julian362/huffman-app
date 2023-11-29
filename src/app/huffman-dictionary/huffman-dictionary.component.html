@@ -1,0 +1,33 @@
+<div class="container text-center mt-5">
+  <h2>Ir a</h2>
+  <button routerLink="/descomprimir" class="btn btn-success m-2">
+    Descomprimir
+  </button>
+  <button routerLink="/comprimir" class="btn btn-success m-2">Comprimir</button>
+</div>
+
+<div class="container mt-3">
+  <h2>Diccionario</h2>
+
+  <div class="result-container mt-4">
+    <div *ngIf="dictionary && dictionary.length > 0">
+      <h3>Diccionario:</h3>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Carácter</th>
+              <th>Código</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let entry of dictionary">
+              <td>{{ entry[1] }}</td>
+              <td>{{ entry[0] }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

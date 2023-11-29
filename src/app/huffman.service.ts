@@ -26,4 +26,8 @@ export class HuffmanService {
       compressedText,
     });
   }
+
+  getTable(): Observable<string> {
+    return this.http.get<string>(`${this.apiUrl}/dictionary`);
+  }
 }
